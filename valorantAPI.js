@@ -16,32 +16,68 @@ app.post('/api',(request,response) => {
     console.log("Request reccieved");
     console.log(request.body)
 
+    /*
     response.json({
         status: "successful",
         username: request.body.username,
         tag: request.body.tag
     })
+    */
+
+    async function getAccount(account, tag, force ){
+   
+        let data
+        data = await testAPI.getAccount({
+    
+            name: account,
+            tag: tag,
+            force: false,
+        
+        })
+
+        
+
+        response.json({
+            status: "successful",
+            username: data.data.name,
+            tag: data.data.tag,
+            region: data.data.region
+        });
+
+        console.log(data);
+    }
+
+    async function getmatches(){
+    let data
+    let conversion
+
+    data = await testAPI.getMatches({
+        name: "Bear",
+        tag: "1507",
+        region: "na"
+    });
+
+    for(let x in data.data){
+
+        console.log(data.data[x].metadata);
+
+    }
+
+    console.log(data.ratelimits);
+
+}
+
+    getAccount(request.body.username, request.body.tag, false);
+
 });
 
 
 
 
 
-async function getAccount(account, tag, force ){
-   
-    let data
-    data = await testAPI.getAccount({
 
-        name: "Hope",
-        tag: "fuls",
-        force: false,
-    
-    });
 
-    console.log(data);   
-}
-
-export async function getmatches(){
+async function getmatches(){
     let data
     let conversion
 
