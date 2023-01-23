@@ -6,9 +6,9 @@ function clicker(){
    let searchTag = document.getElementById('searchTag').value;
 
    let searchPlayer = JSON.stringify({"username":searchName, "tag":searchTag});
-   let url = new URL('http://localhost:3000/api');
+   let url = new URL('http://localhost:3000/api_val');
 
-   sendRequest(url,searchPlayer)
+   sendRequest(url,searchPlayer);
 }
 
 async function sendRequest(url, content){
