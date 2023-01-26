@@ -19,16 +19,30 @@
     <h1>Stat Tracker V2</h1>
 </div>
 <div class="topnav">
-    <a class="active" href="index.html">Home</a>
+    <a href="index.html">Home</a>
     <a href="#about">About</a>
-    <a href="valorant.html">Valorant</a>
+    <a class="active" href="valorant.html">Valorant</a>
     <a href="#Overwatch">Overwatch</a>
     <div class="search-container">
+        <input type="text" placeholder="Search.." name="search" id="searchBar" value="">
+        <input type="text" placeholder="Tag.." name="Tag" id="searchTag" value="">
+        <button onclick="clicker()" type="submit"><i class="fa fa-search" style="color:red"></i></button>
+ 
     </div>
+  </div>
+
+  <div class = "Result">
+
+    <input type="text" disabled="disabled" placeholder="Tag.." name="Tag" id="result_Tag" style="width: 160000px; height:500px ">
+
+
   </div>
 
 
 <!--Scripts here for optimized loading-->
+<script src="scripts.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
 </body>

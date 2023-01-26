@@ -23,9 +23,17 @@ async function sendRequest(url, content){
 
    const json = await data.json();
 
-   console.log(json);
+   console.log(json.region);
 
-   
+   result(json);
+}
+
+function result (data){
+
+   let parse = JSON.stringify(data);
+
+   document.getElementById('result_Tag').value = "1234" + parse;
+
 }
 
 

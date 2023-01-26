@@ -39,7 +39,9 @@ app.post('/api_val', (request, response) => {
                 username: data.data.name,
                 tag: data.data.tag,
                 region: data.data.region,
-                ratelimits: data.ratelimits
+                ratelimits: data.ratelimits,
+                DELTA: "1.2999912234.... DELTA, DIAMOND 2",
+                RR:"RR POSITIVE NEGATIVE"
             })
             console.log("Sucessful!")
             console.log(data.ratelimits)
@@ -51,8 +53,20 @@ app.post('/api_val', (request, response) => {
                 code = data.error[0].code;
                 msg = data.error[0].details;
             } catch (next_error) {
-                console.log("No error code from server: ", next_error + "\n" + "Original error message:", error)
+                console.log("No error code from server: ", next_error + "\n" + "Original error message:", error);
+                
+                response.json({
+                    status: "unsuccessful",
+                    error: msg,
+                    code: code       
+                })
             }
+
+            response.json({         
+                status: "unsuccessful",
+                error: msg,
+                code: code       
+            })
 
             console.log("Error from try/catch: ", error + "\n" + "Error code from API: ", code + "\n" + "Error details: ", msg);
 
