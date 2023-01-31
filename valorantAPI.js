@@ -54,14 +54,14 @@ app.post('/api_val', (request, response) => {
                 console.log("No error code from server: ", next_error + "\n" + "Original error message:", error);
                 
                 response.json({
-                    status: "unsuccessful",
+                    status: "Unsuccessful",
                     error: msg,
                     code: code       
                 })
             }
 
             response.json({         
-                status: "unsuccessful",
+                status: "Unsuccessful!",
                 error: msg,
                 code: code       
             })

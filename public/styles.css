@@ -58,12 +58,13 @@
   }
   
   .topnav .search-container button:hover {
-    background: grey
+    background: rgb(241, 239, 239);
   }
   
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 860px) {
     .topnav .search-container {
       float: none;
+      
     }
     .topnav a, .topnav input[type=text], .topnav .search-container button {
       float: none;
