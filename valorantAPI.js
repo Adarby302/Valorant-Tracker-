@@ -35,13 +35,11 @@ app.post('/api_val', (request, response) => {
                 force: false,
             })
             response.json({
-                status: "successful",
+                status: "Successful!",
                 username: data.data.name,
                 tag: data.data.tag,
                 region: data.data.region,
                 ratelimits: data.ratelimits,
-                DELTA: "1.2999912234.... DELTA, DIAMOND 2",
-                RR:"RR POSITIVE NEGATIVE"
             })
             console.log("Sucessful!")
             console.log(data.ratelimits)

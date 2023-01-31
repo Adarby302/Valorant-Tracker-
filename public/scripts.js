@@ -23,17 +23,27 @@ async function sendRequest(url, content){
 
    const json = await data.json();
 
-   console.log(json.region);
+   console.log(json);
 
    result(json);
 }
 
 function result (data){
 
-   let parse = JSON.stringify(data);
+   let parse_status = JSON.stringify(data.status)
 
-   document.getElementById('result_Tag').value = "1234" + parse;
-
+   document.getElementById('res_name').value = data.username;
+   document.getElementById('res_reg').value = data.region;
+   let prompt = document.getElementById('res_stat');
+    if(parse_status =="\"Successful!\""){
+      
+      document.getElementById('res_stat').value = data.status;
+      prompt.style.color = 'green';
+    }
+    else{
+      document.getElementById('res_stat').value = data.status;
+      prompt.style.color = 'Red'
+    }
 }
 
 
